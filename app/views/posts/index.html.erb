@@ -1,0 +1,20 @@
+<h1>Hello Ruby</h1>
+
+<!--controllerで@postsという変数で取得した全投稿内容を、each, jsで言うところのmap関数のようなもので全表示
+postで繰り返す Flaskのあれみたいな -->
+
+<div class="button-container">
+<%= link_to  "新しい投稿", new_post_path, class: "link-button" %>
+</div>
+
+<ul>
+    <% @posts.each do |post| %>
+        <li>
+            <h2><%= post.title %></h2>
+            <p><%= post.content %></p>
+            <span>
+                <small><%= post.created_at %></small>
+            </span>
+        </li>
+    <% end %>
+</ul>
